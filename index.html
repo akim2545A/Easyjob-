@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EasyJob App - Tengeneza CV in 2 Mins</title>
+<style>
+body{font-family:Arial;background:#f2f2f2;margin:0;padding:15px}
+.box{max-width:500px;margin:auto;background:white;padding:20px;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+h1{color:#00a651;text-align:center;margin:0} p{color:#555;text-align:center}
+label{font-weight:bold;display:block;margin-top:12px}
+input,textarea,select{width:100%;padding:12px;margin-top:5px;border:1px solid #ddd;border-radius:8px;box-sizing:border-box}
+button{width:100%;padding:14px;background:#00a651;color:white;border:none;border-radius:10px;font-size:16px;font-weight:bold;margin-top:15px;cursor:pointer}
+.pay{background:#fff8e1;padding:15px;border-radius:10px;margin-top:15px;text-align:center;border:1px dashed #ffb300}
+.pay b{font-size:18px;color:#000}
+.small{font-size:12px;color:#888;text-align:center;margin-top:10px}
+#cv{display:none;margin-top:20px;border:1px solid #000;padding:20px}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>EasyJob App 🇰🇪</h1>
+<p>Tengeneza CV Professional in 2 Minutes - <b>Ksh 150 tu</b></p>
+
+<label>Jina Kamili</label>
+<input id="name" placeholder="e.g. Kevin Otieno">
+<label>Namba ya Simu / WhatsApp</label>
+<input id="phone" placeholder="e.g. 07XX XXX XXX">
+<label>Kazi Unatafuta</label>
+<input id="job" placeholder="e.g. Driver, Waiter, Sales, House Help">
+<label>Elimu Yako</label>
+<select id="edu"><option>KCPE</option><option>KCSE</option><option>College / Diploma</option><option>University</option></select>
+<label>Uzoefu Wako / Skills (Andika chochote)</label>
+<textarea id="exp" rows="3" placeholder="e.g. Nimefanya kazi kwa hoteli 1 year, najua kuendesha..."></textarea>
+
+<div class="pay">
+<b>LIPA KWANZA - Ksh 150</b><br>
+M-PESA: Send Money to <br><b style="font-size:22px;color:green">0791921883</b><br>
+Jina: EasyJob App<br>
+Kisha weka M-PESA Code hapa chini
+</div>
+
+<label>M-PESA Code (e.g. QK123...)</label>
+<input id="code" placeholder="Weka code uliyotumiwa">
+
+<button onclick="makeCV()">TENGENEZA CV YANGU & DOWNLOAD</button>
+<p class="small">Ukilipa, CV yako itatengenezwa mara moja. Kama code si sahihi, bado tutakutengenezea - tutacheck payment baadaye.</p>
+
+<div id="cv">
+<h2 id="cvName"></h2>
+<p id="cvPhone"></p>
+<h3>Kazi Ninayotafuta: <span id="cvJob"></span></h3>
+<p><b>Elimu:</b> <span id="cvEdu"></span></p>
+<p><b>Uzoefu & Skills:</b></p>
+<p id="cvExp"></p>
+<hr><p>Imetengenezwa na EasyJob App - 0791921883</p>
+</div>
+</div>
+
+<script>
+function makeCV(){
+let name=document.getElementById('name').value;
+let phone=document.getElementById('phone').value;
+let job=document.getElementById('job').value;
+let edu=document.getElementById('edu').value;
+let exp=document.getElementById('exp').value;
+let code=document.getElementById('code').value;
+if(!name||!phone||!job||!code){alert('Tafadhali jaza jina, simu, kazi na M-PESA code');return;}
+document.getElementById('cvName').innerText=name;
+document.getElementById('cvPhone').innerText=phone+' | '+job;
+document.getElementById('cvJob').innerText=job;
+document.getElementById('cvEdu').innerText=edu;
+document.getElementById('cvExp').innerText=exp;
+document.getElementById('cv').style.display='block';
+alert('Asante '+name+'! CV yako iko tayari. Screenshot ama Print hii page.');
+window.scrollTo(0,document.body.scrollHeight);
+}
+</script>
+</body>
+  </html>
